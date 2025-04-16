@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Удаляем все предыдущие обработчики popstate
+    window.removeEventListener('popstate', handlePopState); 
+    
+    // Устанавливаем флаг, что мы на странице результатов
+    sessionStorage.setItem('onResultsPage', 'true');
+    
+    // Заменяем текущую запись в истории
+    history.replaceState({ fromResults: true }, '', 'index.html?fromResults=true');
+    
+    // Добавляем наш обработчик
+    window.addEventListener('popstate', handlePopState);
+
     try {
         let results = JSON.parse(localStorage.getItem('testResults')) || 
                      JSON.parse(sessionStorage.getItem('testResultsBackup'));
@@ -47,6 +59,30 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'test.html';
     }
     
+    // Обработчик кнопки "Назад"
+    function handlePopState(event) {
+        console.log('PopState event triggered', event.state);
+        if (sessionStorage.getItem('onResultsPage') === 'true') {
+            sessionStorage.removeItem('onResultsPage');
+            if (confirm('Хотите начать новый тест?')) {
+                window.location.href = 'index.html';
+            } else {
+                // Возвращаем обратно на страницу результатов
+                history.pushState({ fromResults: true }, '', 'index.html?fromResults=true');
+            }
+        }
+    }
+    
+    // Обработчик кнопки "Начать заново"
+    document.getElementById('restart-test').addEventListener('click', () => {
+        localStorage.removeItem('testResults');
+        localStorage.removeItem('testSettings');
+        localStorage.removeItem('testQuestions');
+        sessionStorage.removeItem('testResultsBackup');
+        sessionStorage.removeItem('onResultsPage');
+        window.location.href = 'index.html';
+    });
+
     function checkAnswer(question, userAnswer) {
         switch (question.type) {
             case 'single':
@@ -117,13 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    document.getElementById('restart-test').addEventListener('click', () => {
-  localStorage.removeItem('testResults');
-  localStorage.removeItem('testSettings');
-  localStorage.removeItem('testQuestions');
-  window.location.href = 'index.html';
-});
-
     function escapeHtml(unsafe) {
         if (!unsafe) return '';
         return unsafe.toString()
