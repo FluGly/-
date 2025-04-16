@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по биологии</title>
+    <link rel="stylesheet" href="Css/test.css">
+    <script src="Js/test.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Тест по биологии</h1>
+        </header>
+
+        <main>
+            <section id="test-container">
+                <div id="question-block">
+                    <h2>Вопрос <span id="question-number">1</span> из <span id="questions-total">8</span></h2>
+                    <p id="question-text"></p>
+                    <div id="answers-container"></div>
+                </div>
+            </section>
+
+            <section id="navigation">
+                <h3>Навигация по вопросам:</h3>
+                <div id="question-buttons"></div>
+                <button id="force-finish">Завершить тест</button>
+            </section>
+        </main>
+
+        <footer>
+            <div id="timer">Осталось времени: <span id="time-left">30:00</span></div>
+        </footer>
+    </div>
+
+    
+</body>
+</html>
