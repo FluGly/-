@@ -1,0 +1,82 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Что самое маленькое в живом существе?",
+      "type": "single",
+      "answers": [
+        {"id": "A", "text": "Рука"},
+        {"id": "B", "text": "Клетка", "correct": true},
+        {"id": "C", "text": "Сердце"},
+        {"id": "D", "text": "Нога"}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Что умеет делать живой организм?",
+      "type": "multiple",
+      "answers": [
+        {"id": "A", "text": "Дышать", "correct": true},
+        {"id": "B", "text": "Расти", "correct": true},
+        {"id": "C", "text": "Есть", "correct": true},
+        {"id": "D", "text": "Летать"}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Как тело держит всё в порядке?",
+      "type": "text",
+      "correctAnswer": "гомеостаз"
+    },
+    {
+      "id": 4,
+      "text": "Где все живые существа связаны друг с другом?",
+      "type": "dropdown",
+      "answers": [
+        {"id": "A", "text": "В коробке"},
+        {"id": "B", "text": "В книге"},
+        {"id": "C", "text": "В природе", "correct": true},
+        {"id": "D", "text": "В телевизоре"}
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Кто похож друг на друга и живет вместе?",
+      "type": "single",
+      "answers": [
+        {"id": "A", "text": "Разные животные"},
+        {"id": "B", "text": "Люди в городе", "correct": true},
+        {"id": "C", "text": "Деревья и трава"},
+        {"id": "D", "text": "Рыбы в реке"}
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Что помогает человеку жить?",
+      "type": "multiple",
+      "answers": [
+        {"id": "A", "text": "Сердце", "correct": true},
+        {"id": "B", "text": "Легкие", "correct": true},
+        {"id": "C", "text": "Желудок", "correct": true},
+        {"id": "D", "text": "Волосы"}
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Как родители передают свои черты детям?",
+      "type": "text",
+      "correctAnswer": "наследственность"
+    },
+    {
+      "id": 8,
+      "text": "Что нужно телу, чтобы работать?",
+      "type": "dropdown",
+      "answers": [
+        {"id": "A", "text": "Воздух", "correct": true},
+        {"id": "B", "text": "Сон"},
+        {"id": "C", "text": "Игрушки"},
+        {"id": "D", "text": "Музыка"}
+      ]
+    }
+  ]
+}

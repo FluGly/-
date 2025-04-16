@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты теста</title>
+    <link rel="stylesheet" href="Css/results.css">
+    <script src="Js/results.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты теста</h1>
+        
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Вопрос</th>
+                    <th>Ваш ответ</th>
+                    <th>Правильный ответ</th>
+                    <th>Баллы</th>
+                </tr>
+            </thead>
+            <tbody id="results-body">
+            
+  
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="total-label">Итого:</td>
+                    <td id="total-score">0</td>
+                </tr>
+                <button id="restart-test" class="restart-btn">Начать тест заново</button>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
